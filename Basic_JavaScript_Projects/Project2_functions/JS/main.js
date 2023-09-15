@@ -1,4 +1,4 @@
-var C = 1;
+var C = ;
 
 function firstFunction() {
     var A = "This is the first variable.";
@@ -8,7 +8,7 @@ function firstFunction() {
 
 function myFunction() {
     var sentence= "I am learning";
-    sentence += " a lot from this book!";
+    sentence += document.getElementById("id1");
     document.getElementById("Concatenate").innerHTML = sentence;
 }
 function myAddFunction() {
