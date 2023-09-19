@@ -1,15 +1,15 @@
-function full_Sentence() {
-    var part_1 = "I have ";
+function full_Sentence() { // Defines the function
+    var part_1 = "I have "; // Defines several variables
     var part_2 = "made this ";
     var part_3 = "into a complete ";
     var part_4 = "sentence.";
-    var whole_sentence = part_1.concat(part_2, part_3, part_4);
-    document.getElementById("Concatenate").innerHTML = whole_sentence;
+    var whole_sentence = part_1.concat(part_2, part_3, part_4); // defines a variable concatenating all parts
+    document.getElementById("Concatenate").innerHTML = whole_sentence; // Puts the value of the variable into the HTML elementFromPoint with the "whole_sentence" id
 }
 
 function slice_Method() {
-    var Sentence = "All work and no play makes Johnny a dull boy.";
-    var Section = Sentence.slice(27,33);
+    var Sentence = "All work and no play makes Johnny a dull boy."; // Defines the variable Sentence
+    var Section = Sentence.slice(27,33); // Defines the Section as the objects in the specified 
     document.getElementById("Slice").innerHTML = Section;
 }
 
