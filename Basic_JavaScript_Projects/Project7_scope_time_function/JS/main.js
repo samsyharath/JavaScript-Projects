@@ -33,6 +33,9 @@ function Age_fave() {
     Age = document.getElementById("Age").value;
     Fav_number = document.getElementById("Fav_number").value;
     var Compare = ""
+    console.log(Age);
+    console.log(Fav_number);
+
     if (Age > Fav_number) {
         Compare = "Your age, " + Age + ", is greater than your favorite number, " + Fav_number + ".";
     }
@@ -43,4 +46,19 @@ function Age_fave() {
         Compare = "Your age, " + Age + ", is less than your favorite number, " + Fav_number + ".";
     }
     document.getElementById("Age_number").innerHTML = Compare;
+}
+
+function Time_function() {
+    var Time = new Date().getHours();
+    var Reply;
+    if (Time < 12 == Time > 0) {
+        Reply = "It is morning time!";
+    }
+    else if (Time >= 12 == Time < 18) {
+        Reply = "It is Afternoon.";
+    }
+    else {
+        Reply = "It is evening time.";
+    }
+    document.getElementById("Time_of_day").innerHTML = Reply;
 }
