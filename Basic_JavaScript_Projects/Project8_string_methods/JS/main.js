@@ -10,18 +10,18 @@ function full_Sentence() { // Defines the function
 function slice_Method() {
     var Sentence = "All work and no play makes Johnny a dull boy."; // Defines the variable Sentence
     var Section = Sentence.slice(27,33); // Defines the Section as the objects in the specified 
-    document.getElementById("Slice").innerHTML = Section;
+    document.getElementById("Slice").innerHTML = Section; // Puts the value of the variable into the HTML elementFromPoint with  the "Section" id
 }
 
 function all_Cap() {
     var user_input = document.getElementById("New_Input").value;
-    var upper_input = user_input.toUpperCase();
+    var upper_input = user_input.toUpperCase(); // Converts user_input to all capital letter
     document.getElementById("Upper_Text").innerHTML = upper_input;
 }
 
 function search() {
     var text = "Mr. Blue has a blue horse.";
-    var position = text.search("Blue");
+    var position = text.search("Blue"); //Finds the position of the searched text
     document.getElementById("search_position").innerHTML = position;
 }
 
