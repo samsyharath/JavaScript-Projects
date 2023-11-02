@@ -94,5 +94,47 @@ function checkWinConditions() {
     //
     else if (arrayIncludes( '0O', '3O', '6O')) {drawWinLine(100, 50, 100, 558) }
     //
-    else if (arrayIncludes( '3X', '4X', '5X')) {drawWinLine(50, 304, 558, 304) }
+    else if (arrayIncludes( '1O', '4O', '7O')) {drawWinLine(304, 50, 304, 558) }
+    //
+    else if (arrayIncludes( '2O', '5O', '8O')) {drawWinLine(508, 50, 508, 558) }
+    //
+    else if (arrayIncludes( '6O', '4O', '2O')) {drawWinLine(100, 508, 510, 90) }
+    //
+    else if (arrayIncludes( '0O', '4O', '8O')) {drawWinLine(100, 100, 520, 520) }
+    //This condition checks for a tie. If none of the above conditions are met and
+    //9 squares are selected the code executes.
+    else if (selectedSquares.length >= 9) {
+        //This function plays the tie game sound.
+        audio('./media/tie.mp3');
+        //This function sets a .3 second timer before the resetGame is called.
+        setTimeout(function () { resetGame(); }, 500);
+    }
+    //This function checks if an array includes 3 strings. It is used to check for
+    //each win condition.
+    function arrayIncludes(squareA, squareB, squareC) {
+        //These variables will be used to check for 3 in a row.
+        const a = selectedSquares.includes(squareA);
+        const b = selectedSquares.includes(squareB);
+        const c = selectedSquares.includes(squareC);
+        //If the 3 variables we pass are all included in our array then
+        //true is returned and our else if condition executes the drawLine() function.
+        if (a === true && b === true && c === true) {return true; }
+    }
+
+    //This function makes our body element temporarily unclickable.
+    function disableClick() {
+        //This makes our body unclickable.
+        ReportBody.style.pointerEvents = 'none';
+        //This makes our body clickable again after 1 second.
+        setTimeout(function () { ReportBody.style.pointerEvents = 'auto'; }, 1000);
+    }
+
+    //This function takes a string paremeter of the path you set earlier for 
+    //placement sound('./media/place.mp3')
+    function audio(audioURL) {
+        //We create a new audio object and we pass the path as a parameter.
+        let audio = new Audio(audioURL);
+        //Play method plays our audio sound.
+        audio.play();
+    }
 }
