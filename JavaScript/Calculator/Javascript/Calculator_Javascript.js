@@ -105,6 +105,11 @@ keys.addEventListener('click', (event) => {
         Update_Display();
         return
     }
+    if (target.classList.contains('decimal')) {
+        Input_Decimal(target.value);
+        Update_Display();
+        return;
+    }
     //Ensures that AC clears all inputs from the Calculator screen.
     if (target.classList.contains('all-clear')) {
         Calculator_Reset();
